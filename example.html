@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Demo</title>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript" src="src/Class.js"></script>
+<script type="text/javascript">
+createNamespace('App.Demo.Classes');
+
+App.Demo.Classes.BaseClass = createClass({
+    name: '',
+    url: '',
+    rootContainer: '',
+
+    _init: function (params) {
+        console.log('init BaseClass');
+        console.log(params);
+        if (params.name) {
+            this.name = params.name;
+        }
+    },
+
+    changeData: function (url) {
+        this.url = url;
+    }
+});
+
+App.Demo.Classes.UserClass = App.Demo.Classes.BaseClass.extend({
+    _init: function (params) {
+        this._super(params);
+        console.log('init UserClass');
+    },
+    
+    changeData: function (url) {
+        this._super(url);
+        $(this.rootContainer).html(this.name + ' (' + this.url + ')');
+    }
+});
+
+var user = new App.Demo.Classes.UserClass({name: 'sujeet'});
+user.rootContainer = '#root';
+
+console.log(user instanceof Class);
+console.log(user instanceof App.Demo.Classes.UserClass);
+console.log(user);
+
+$(function () {
+    user.changeData('example.com');
+});
+</script>
+</head>
+
+<body>
+<h1 id="root">Demo</h1>
+</body>
+</html>
