@@ -12,11 +12,11 @@ App.Demo.Classes.BaseClass = createClass({
     url: '',
     rootContainer: '',
 
-    _init: function (params) {
+    _init: function (name) {
         console.log('init BaseClass');
-        console.log(params);
-        if (params.name) {
-            this.name = params.name;
+        console.log(name);
+        if (name) {
+            this.name = name;
         }
     },
 
@@ -26,8 +26,8 @@ App.Demo.Classes.BaseClass = createClass({
 });
 
 App.Demo.Classes.UserClass = App.Demo.Classes.BaseClass.extend({
-    _init: function (params) {
-        this._super(params);
+    _init: function (name) {
+        this._super(name);
         console.log('init UserClass');
     },
     
@@ -37,7 +37,7 @@ App.Demo.Classes.UserClass = App.Demo.Classes.BaseClass.extend({
     }
 });
 
-var user = new App.Demo.Classes.UserClass({name: 'sujeet'});
+var user = new App.Demo.Classes.UserClass('sujeet');
 user.rootContainer = '#root';
 
 console.log(user instanceof Class);

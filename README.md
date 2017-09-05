@@ -11,12 +11,12 @@ var BaseClass = createClass({
     url: '',
     
     /* class constructor */
-    _init: function (params) {
-        if (params.name) {
-            this.name = params.name;
+    _init: function (name, url) {
+        if (name) {
+            this.name = name;
         }
-        if (params.url) {
-            this.url = params.url;
+        if (url) {
+            this.url = url;
         }
     },
     
@@ -27,8 +27,8 @@ var BaseClass = createClass({
 
 var ChildClass = BaseClass.extend({
     /* class constructor */
-    _init: function (params) {
-        this._super(params); /* call overridden method of parent class  */
+    _init: function (name, url) {
+        this._super(name, url); /* call overridden method of parent class  */
     },
     
     alertInfo: function (url) {
@@ -36,9 +36,9 @@ var ChildClass = BaseClass.extend({
     }
 });
 
-var baseClassObj = new BaseClass({name: 'Sujeet', url: 'https://github.com/sujeet-kumar'});
+var baseClassObj = new BaseClass('Sujeet', 'https://github.com/sujeet-kumar');
 
-var childClassObj = new ChildClass({name: 'Sujeet', url: 'https://github.com/sujeet-kumar'});
+var childClassObj = new ChildClass('Sujeet', 'https://github.com/sujeet-kumar');
 ```
 
 Private class members can also be defined as:
@@ -53,12 +53,12 @@ var BaseClass = createClass((function () {
         name: '',
         url: '',
         
-        _init: function (params) {
-            if (params.name) {
-                this.name = params.name;
+        _init: function (name, url) {
+            if (name) {
+                this.name = name;
             }
-            if (params.url) {
-                this.url = params.url;
+            if (url) {
+                this.url = url;
             }
         },
         
@@ -76,8 +76,8 @@ var ChildClass = BaseClass.extend((function () {
     
     /* public members */
     return {
-        _init: function (params) {
-            this._super(params);
+        _init: function (name, url) {
+            this._super(name, url);
         },
 
         alertInfo: function (url) {
