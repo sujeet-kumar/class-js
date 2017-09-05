@@ -80,7 +80,7 @@ var ChildClass = BaseClass.extend((function () {
             this._super(name, url);
         },
 
-        alertInfo: function (url) {
+        alertInfo: function () {
             alert(this.getInfo());
             log(this.getInfo());
         }
