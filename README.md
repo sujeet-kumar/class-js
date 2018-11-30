@@ -36,9 +36,9 @@ var ChildClass = BaseClass.extend({
     }
 });
 
-var baseClassObj = new BaseClass('Sujeet', 'https://github.com/sujeet-kumar');
+var baseClassObj = new BaseClass('Sujeet', 'https://github.com/sujeetkv');
 
-var childClassObj = new ChildClass('Sujeet', 'https://github.com/sujeet-kumar');
+var childClassObj = new ChildClass('Sujeet', 'https://github.com/sujeetkv');
 ```
 
 Private class members can also be defined as:

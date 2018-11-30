@@ -4,7 +4,7 @@
  * http://ejohn.org/blog/simple-javascript-inheritance/
  * 
  * @author Sujeet Kumar <sujeetkv90@gmail.com>
- * @link https://github.com/sujeet-kumar/class-js
+ * @link https://github.com/sujeetkv/class-js
  */
 
 (function (globalContext) {
